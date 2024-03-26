@@ -21,7 +21,7 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-      - uses: reg-viz/reg-actions@1b7e3c96a82b2b1f9a7200a2ffcb6d9790c15c6c
+      - uses: reg-viz/reg-actions@25d6795ce4a6aea010d9ca8927b949a938a29ba0
         with:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
           image-directory-path: "snapshots/actual"
