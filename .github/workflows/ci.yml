@@ -26,4 +26,3 @@ jobs:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
           image-directory-path: "snapshots/actual"
           artifact-name: vrt
-          report-file-path: report.html
