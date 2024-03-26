@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  actions: write
+  contents: write
+  pull-requests: write
+
+jobs:
+  unittest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+      - uses: reg-viz/reg-actions@1b7e3c96a82b2b1f9a7200a2ffcb6d9790c15c6c
+        with:
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+          image-directory-path: "snapshots/actual"
+          artifact-name: vrt
+          report-file-path: report.html
